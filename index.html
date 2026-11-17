@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Brandon Hughes | Philosophy of Instructional Technology Portfolio</title>
+<meta name="description" content="An instructional technology portfolio by Brandon Hughes: a final philosophy of instructional technology, a portfolio narrative, and evidence of learning from AIL 601 at the University of Alabama.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;600;700&amp;family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&amp;family=IBM+Plex+Mono:wght@400;600&amp;display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#22231F;
+  --ink-soft:#4A4D45;
+  --forest:#1E3D2F;
+  --forest-deep:#15291F;
+  --forest-mid:#2F5A44;
+  --cream:#FBF8F1;
+  --cream-alt:#F3EEE2;
+  --cream-deep:#EAE3D2;
+  --amber:#C8860D;
+  --amber-deep:#7E5207;
+  --rule:#D7CFBD;
+  --maxw:72rem;
+  --readw:40rem;
+  --serif:"Roboto Slab",Georgia,"Times New Roman",serif;
+  --sans:"Source Sans 3","Segoe UI",system-ui,-apple-system,sans-serif;
+  --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{
+  margin:0;
+  background:var(--cream);
+  color:var(--ink);
+  font-family:var(--sans);
+  font-size:1.0625rem;
+  line-height:1.65;
+  text-rendering:optimizeLegibility;
+}
+
+/* ---------- Skip link ---------- */
+.skip{
+  position:absolute;left:-9999px;top:0;z-index:999;
+  background:var(--forest);color:var(--cream);
+  padding:.75rem 1.25rem;font-weight:600;
+  border-radius:0 0 .4rem 0;text-decoration:none;
+}
+.skip:focus{left:0}
+
+/* ---------- Focus ---------- */
+a:focus-visible,button:focus-visible,[tabindex]:focus-visible{
+  outline:3px solid var(--amber-deep);
+  outline-offset:3px;
+  border-radius:2px;
+}
+main:focus{outline:none}
+/* Headings receive focus programmatically on view change so screen readers
+   land on the new title. They are not in the tab order, so WCAG 2.4.7 does
+   not apply and a ring here would only read as a rendering fault. The polite
+   live region carries the announcement. */
+.view h1[tabindex="-1"]:focus,
+.view h1[tabindex="-1"]:focus-visible{outline:none}
+
+/* ---------- Header / nav ---------- */
+.masthead{
+  background:var(--forest-deep);
+  color:var(--cream);
+  border-bottom:4px solid var(--amber);
+}
+.masthead-inner{
+  max-width:var(--maxw);margin:0 auto;padding:1.15rem 1.5rem .25rem;
+}
+.wordmark{
+  display:block;text-decoration:none;color:var(--cream);
+  font-family:var(--serif);font-weight:700;font-size:1.35rem;
+  letter-spacing:-.01em;line-height:1.2;
+}
+.wordmark:hover{color:#fff}
+.wordmark .rule-dot{color:var(--amber)}
+.wordmark-sub{
+  display:block;font-family:var(--mono);font-size:.72rem;
+  letter-spacing:.09em;text-transform:uppercase;
+  color:#CFCBBE;margin-top:.3rem;font-weight:400;
+}
+nav.sitenav{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+nav.sitenav ul{
+  list-style:none;margin:0;padding:0;
+  display:flex;flex-wrap:wrap;gap:.15rem;
+}
+nav.sitenav a{
+  display:block;
+  padding:.85rem 1rem;
+  min-height:44px;
+  color:#E6E2D6;text-decoration:none;
+  font-weight:600;font-size:.95rem;
+  border-bottom:3px solid transparent;
+}
+nav.sitenav a:hover{color:#fff;border-bottom-color:var(--forest-mid);background:rgba(255,255,255,.05)}
+nav.sitenav a[aria-current="page"]{
+  color:#fff;border-bottom-color:var(--amber);
+  font-weight:700;background:rgba(255,255,255,.07);
+}
+
+/* ---------- Layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.5rem}
+.view{display:none;padding:3rem 0 4.5rem}
+.view.is-active{display:block}
+.prose{max-width:var(--readw)}
+.prose p{margin:0 0 1.15rem}
+
+/* ---------- Type ---------- */
+h1,h2,h3,h4{font-family:var(--serif);color:var(--forest);line-height:1.22;margin:0}
+h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:700;letter-spacing:-.02em}
+h2{font-size:clamp(1.4rem,2.8vw,1.85rem);font-weight:600;margin:2.9rem 0 .9rem}
+h3{font-size:1.15rem;font-weight:600;margin:2rem 0 .6rem}
+h4{font-size:1rem;font-weight:600;margin:1.4rem 0 .4rem}
+.eyebrow{
+  font-family:var(--mono);font-size:.73rem;font-weight:600;
+  letter-spacing:.13em;text-transform:uppercase;
+  color:var(--amber-deep);margin:0 0 .7rem;
+}
+.lede{font-size:1.2rem;line-height:1.55;color:var(--ink-soft);max-width:var(--readw)}
+.page-head{border-bottom:2px solid var(--rule);padding-bottom:1.6rem;margin-bottom:.5rem}
+a{color:var(--forest-mid);text-underline-offset:.16em;text-decoration-thickness:.07em}
+a:hover{color:var(--forest-deep)}
+.prose a{font-weight:600}
+
+/* ---------- Hero ---------- */
+.hero{padding:.5rem 0 1rem}
+.hero h1{max-width:19ch}
+.hero .lede{margin-top:1.1rem}
+.thesis{
+  margin:2.4rem 0 0;
+  border-left:5px solid var(--amber);
+  background:var(--cream-alt);
+  padding:1.4rem 1.6rem;
+  max-width:46rem;
+  border-radius:0 .4rem .4rem 0;
+}
+.thesis blockquote{
+  margin:0;font-family:var(--serif);font-size:1.12rem;
+  line-height:1.5;color:var(--forest-deep);
+}
+.thesis cite{
+  display:block;margin-top:.7rem;font-family:var(--mono);
+  font-size:.74rem;letter-spacing:.07em;text-transform:uppercase;
+  font-style:normal;color:var(--ink-soft);
+}
+
+/* ---------- Cards ---------- */
+.cardgrid{
+  display:grid;gap:1.1rem;margin:2.5rem 0 0;
+  grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));
+}
+.card{
+  background:#fff;border:1px solid var(--rule);
+  border-radius:.5rem;padding:1.35rem 1.4rem 1.5rem;
+  display:flex;flex-direction:column;
+}
+.card h3{margin-top:0}
+.card p{margin:0 0 1rem;color:var(--ink-soft);font-size:.97rem}
+.card .go{margin-top:auto;font-weight:700;text-decoration:none;color:var(--forest-mid)}
+.card .go:hover{text-decoration:underline}
+.card .go::after{content:" \2192"}
+
+/* ---------- Panels ---------- */
+.panel{
+  background:var(--cream-alt);border:1px solid var(--rule);
+  border-radius:.5rem;padding:1.5rem 1.6rem;margin:2rem 0;
+}
+.panel > :first-child{margin-top:0}
+.panel > :last-child{margin-bottom:0}
+.panel-accent{border-left:5px solid var(--amber)}
+
+/* ---------- Figures ---------- */
+figure{margin:2.4rem 0;max-width:54rem}
+figure svg{width:100%;height:auto;display:block}
+figcaption{
+  font-size:.9rem;color:var(--ink-soft);margin-top:.75rem;
+  padding-left:.9rem;border-left:3px solid var(--rule);
+}
+figcaption b{color:var(--forest);font-weight:600}
+
+/* ---------- Tables ---------- */
+.tablewrap{overflow-x:auto;margin:1.8rem 0;border:1px solid var(--rule);border-radius:.5rem}
+table{border-collapse:collapse;width:100%;min-width:34rem;font-size:.95rem;background:#fff}
+caption{
+  text-align:left;font-family:var(--mono);font-size:.73rem;
+  letter-spacing:.11em;text-transform:uppercase;color:var(--amber-deep);
+  padding:.9rem 1rem .5rem;font-weight:600;
+}
+th,td{text-align:left;padding:.7rem .9rem;border-bottom:1px solid var(--rule);vertical-align:top}
+thead th{
+  background:var(--forest);color:var(--cream);
+  font-family:var(--sans);font-weight:600;font-size:.88rem;
+  border-bottom:none;
+}
+tbody th{font-weight:600;color:var(--forest);background:var(--cream-alt);width:11rem}
+tbody tr:last-child th,tbody tr:last-child td{border-bottom:none}
+
+/* ---------- Artifact entries ---------- */
+.artifact{
+  border:1px solid var(--rule);border-radius:.5rem;
+  background:#fff;margin:2rem 0;overflow:hidden;
+}
+.artifact-head{
+  background:var(--forest);color:var(--cream);
+  padding:1.3rem 1.5rem;
+}
+.artifact-head .mod{
+  font-family:var(--mono);font-size:.72rem;letter-spacing:.13em;
+  text-transform:uppercase;color:#E8C77E;display:block;margin-bottom:.35rem;
+}
+.artifact-head h2{color:#fff;margin:0;font-size:1.3rem}
+.artifact-body{padding:1.5rem}
+.artifact-body > p,.evidence p{max-width:var(--readw)}
+.artifact-body > :first-child{margin-top:0}
+.meta{
+  list-style:none;margin:0 0 1.3rem;padding:0;
+  display:grid;gap:.5rem .9rem;
+  grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));
+  border-bottom:1px solid var(--rule);padding-bottom:1.2rem;
+}
+.meta div{font-size:.9rem}
+.meta dt{
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--amber-deep);font-weight:600;
+}
+.meta dd{margin:.15rem 0 0;color:var(--ink-soft)}
+.evidence{
+  background:var(--cream-alt);border-left:5px solid var(--amber);
+  border-radius:0 .4rem .4rem 0;padding:1.15rem 1.3rem;margin:1.3rem 0 0;
+}
+.evidence h3{margin-top:0;color:var(--forest-deep)}
+.evidence p:last-child{margin-bottom:0}
+.visit{
+  display:inline-block;margin-top:1.3rem;
+  background:var(--forest);color:#fff;text-decoration:none;
+  font-weight:600;padding:.75rem 1.3rem;border-radius:.35rem;
+  min-height:44px;line-height:1.6;
+}
+.visit:hover{background:var(--forest-deep);color:#fff}
+.visit .ext{font-weight:400;font-size:.85em;opacity:.85}
+
+/* ---------- Stage list ---------- */
+.stages{list-style:none;counter-reset:st;margin:2rem 0;padding:0;max-width:calc(var(--readw) + 3.6rem)}
+.stages > li{
+  counter-increment:st;position:relative;
+  padding:0 0 1.6rem 3.6rem;margin:0;
+  border-left:2px solid var(--rule);
+}
+.stages > li:last-child{border-left-color:transparent;padding-bottom:0}
+.stages > li::before{
+  content:counter(st);
+  position:absolute;left:-1.1rem;top:0;
+  width:2.2rem;height:2.2rem;border-radius:50%;
+  background:var(--forest);color:var(--cream);
+  font-family:var(--mono);font-weight:600;font-size:.95rem;
+  display:flex;align-items:center;justify-content:center;
+}
+.stages h3{margin-top:.1rem}
+.stages p:last-child{margin-bottom:0}
+
+/* ---------- References ---------- */
+.refs{list-style:none;padding:0;margin:1.2rem 0 0;max-width:46rem}
+.refs li{
+  padding-left:2.2rem;text-indent:-2.2rem;
+  margin-bottom:.85rem;font-size:.94rem;line-height:1.55;
+}
+.refs a{word-break:break-word}
+
+/* ---------- Misc ---------- */
+.tag{
+  display:inline-block;font-family:var(--mono);font-size:.7rem;
+  letter-spacing:.08em;text-transform:uppercase;font-weight:600;
+  background:var(--cream-deep);color:var(--forest-deep);
+  padding:.25rem .55rem;border-radius:.25rem;margin:0 .3rem .3rem 0;
+}
+ul.tick{list-style:none;padding:0;margin:1rem 0}
+ul.tick li{padding-left:1.7rem;position:relative;margin-bottom:.65rem}
+ul.tick li::before{
+  content:"";position:absolute;left:0;top:.52em;
+  width:.6rem;height:.6rem;background:var(--amber);
+  border-radius:50%;
+}
+.prose ul:not(.tick):not(.refs){padding-left:1.25rem}
+.prose ul:not(.tick):not(.refs) li{margin-bottom:.55rem}
+.divider{border:0;border-top:2px solid var(--rule);margin:3rem 0}
+
+/* ---------- Footer ---------- */
+footer.sitefoot{
+  background:var(--forest-deep);color:#CFCBBE;
+  padding:2.5rem 0;margin-top:2rem;font-size:.9rem;
+}
+footer.sitefoot .wrap{display:flex;flex-wrap:wrap;gap:1.5rem;justify-content:space-between}
+footer.sitefoot p{margin:0 0 .4rem;max-width:34rem}
+footer.sitefoot a{color:#E8C77E;font-weight:600}
+footer.sitefoot a:hover{color:#fff}
+
+/* ---------- Visually hidden ---------- */
+.vh{
+  position:absolute!important;width:1px;height:1px;
+  padding:0;margin:-1px;overflow:hidden;
+  clip:rect(0 0 0 0);white-space:nowrap;border:0;
+}
+
+@media (max-width:640px){
+  body{font-size:1rem}
+  .wrap{padding:0 1.15rem}
+  .masthead-inner{padding:1rem 1.15rem .25rem}
+  nav.sitenav{padding:0 .6rem}
+  nav.sitenav a{padding:.8rem .7rem;font-size:.9rem}
+  .view{padding:2.2rem 0 3rem}
+  tbody th{width:auto}
+}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+}
+
+@media print{
+  .masthead,nav.sitenav,.skip,footer.sitefoot{display:none}
+  .view{display:block!important;page-break-after:always}
+  body{background:#fff;font-size:11pt}
+}
+</style>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to main content</a>
+
+<header class="masthead">
+  <div class="masthead-inner">
+    <a class="wordmark" href="#home" aria-label="Brandon Hughes, portfolio home">
+      Brandon Hughes <span class="rule-dot" aria-hidden="true">/</span> Instructional Technology
+      <span class="wordmark-sub">AIL 601 &middot; Principles of Instructional Technology &middot; The University of Alabama</span>
+    </a>
+  </div>
+  <nav class="sitenav" aria-label="Primary">
+    <ul>
+      <li><a href="#home" data-route="home">Home</a></li>
+      <li><a href="#philosophy" data-route="philosophy">Philosophy</a></li>
+      <li><a href="#narrative" data-route="narrative">Portfolio Narrative</a></li>
+      <li><a href="#artifacts" data-route="artifacts">Artifacts</a></li>
+      <li><a href="#integrity" data-route="integrity">Accessibility &amp; Use</a></li>
+    </ul>
+  </nav>
+</header>
+
+<p class="vh" role="status" aria-live="polite" id="announcer"></p>
+
+<main id="main" tabindex="-1">
+
+<!-- ============ HOME ============ -->
+<section class="view" id="view-home" aria-labelledby="h-home">
+  <div class="wrap">
+    <div class="hero">
+      <p class="eyebrow">Instructional Technology Portfolio</p>
+      <h1 id="h-home" tabindex="-1">Technology earns its place when it does something instruction cannot do as well without it.</h1>
+      <p class="lede">A portfolio documenting the move from classroom instinct to a position I can defend, test, and be wrong about. It collects my final Philosophy of Instructional Technology, three design artifacts built across Modules 3 through 5, and the evidence connecting them.</p>
+
+      <div class="thesis">
+        <blockquote>No single learning theory governs good instruction or is necessarily better than others. The right theory depends on the task in front of the learner, and the designer&rsquo;s job is to match them so the chosen technology meaningfully improves the process.</blockquote>
+        <cite>Central claim, Philosophy of Instructional Technology</cite>
+      </div>
+    </div>
+
+    <figure>
+      <svg viewBox="0 0 820 220" role="img" aria-labelledby="arcTitle arcDesc">
+        <title id="arcTitle">The arc of this portfolio, in three stages</title>
+        <desc id="arcDesc">Three connected stages moving left to right. Stage one, practice without vocabulary: effective classroom routines that could be repeated but not explained. Stage two, named mechanisms: course theory supplying terms such as task fit, scaffolding, and cognitive load, each carrying a test. Stage three, tested against feedback: instructor feedback on an artifact exposing a gap, which changed a stated position in the final philosophy.</desc>
+        <defs>
+          <marker id="arw" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#2F5A44"></path>
+          </marker>
+        </defs>
+        <rect x="2" y="30" width="248" height="128" rx="8" fill="#F3EEE2" stroke="#D7CFBD" stroke-width="2"></rect>
+        <rect x="2" y="30" width="7" height="128" rx="3" fill="#C8860D"></rect>
+        <text x="28" y="60" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#7E5207" letter-spacing="1.4">STAGE 01</text>
+        <text x="28" y="90" font-family="Roboto Slab, serif" font-size="20" font-weight="600" fill="#1E3D2F">Practice without</text>
+        <text x="28" y="114" font-family="Roboto Slab, serif" font-size="20" font-weight="600" fill="#1E3D2F">vocabulary</text>
+        <text x="28" y="140" font-family="Source Sans 3, sans-serif" font-size="14" fill="#4A4D45">Repeatable. Not explainable.</text>
+
+        <line x1="258" y1="94" x2="292" y2="94" stroke="#2F5A44" stroke-width="3" marker-end="url(#arw)"></line>
+
+        <rect x="300" y="30" width="248" height="128" rx="8" fill="#F3EEE2" stroke="#D7CFBD" stroke-width="2"></rect>
+        <rect x="300" y="30" width="7" height="128" rx="3" fill="#C8860D"></rect>
+        <text x="326" y="60" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#7E5207" letter-spacing="1.4">STAGE 02</text>
+        <text x="326" y="90" font-family="Roboto Slab, serif" font-size="20" font-weight="600" fill="#1E3D2F">Named</text>
+        <text x="326" y="114" font-family="Roboto Slab, serif" font-size="20" font-weight="600" fill="#1E3D2F">mechanisms</text>
+        <text x="326" y="140" font-family="Source Sans 3, sans-serif" font-size="14" fill="#4A4D45">Each term carries a test.</text>
+
+        <line x1="556" y1="94" x2="590" y2="94" stroke="#2F5A44" stroke-width="3" marker-end="url(#arw)"></line>
+
+        <rect x="598" y="30" width="220" height="128" rx="8" fill="#1E3D2F" stroke="#1E3D2F" stroke-width="2"></rect>
+        <rect x="598" y="30" width="7" height="128" rx="3" fill="#C8860D"></rect>
+        <text x="624" y="60" font-family="IBM Plex Mono, monospace" font-size="13" font-weight="600" fill="#E8C77E" letter-spacing="1.4">STAGE 03</text>
+        <text x="624" y="90" font-family="Roboto Slab, serif" font-size="20" font-weight="600" fill="#FBF8F1">Tested against</text>
+        <text x="624" y="114" font-family="Roboto Slab, serif" font-size="20" font-weight="600" fill="#FBF8F1">feedback</text>
+        <text x="624" y="140" font-family="Source Sans 3, sans-serif" font-size="14" fill="#CFCBBE">A position changed.</text>
+      </svg>
+      <figcaption><b>Figure 1.</b> The structure of this portfolio. Each stage is documented by artifacts in the sections that follow. Original figure by the author.</figcaption>
+    </figure>
+
+    <h2>Start anywhere</h2>
+    <div class="cardgrid">
+      <div class="card">
+        <h3>Philosophy</h3>
+        <p>The final Philosophy of Instructional Technology: task fit as the organizing principle, with scaffolding, motivation, cognitive load, and Universal Design for Learning supplying the tests.</p>
+        <a class="go" href="#philosophy">Read the philosophy</a>
+      </div>
+      <div class="card">
+        <h3>Portfolio Narrative</h3>
+        <p>How the artifacts demonstrate learning and professional growth, including the one documented instance where external feedback changed a stated position.</p>
+        <a class="go" href="#narrative">Read the narrative</a>
+      </div>
+      <div class="card">
+        <h3>Artifacts</h3>
+        <p>Three Cool Resources from Modules 3, 4, and 5, each with its source, license, governing theory, and the specific evidence of learning it supplies.</p>
+        <a class="go" href="#artifacts">See the artifacts</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PHILOSOPHY ============ -->
+<section class="view" id="view-philosophy" aria-labelledby="h-phil">
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Final Statement</p>
+      <h1 id="h-phil" tabindex="-1">Philosophy of Instructional Technology</h1>
+      <p class="lede">Brandon Hughes &middot; College of Education, The University of Alabama &middot; November 2026</p>
+    </div>
+
+    <div class="prose">
+      <h2>Introduction</h2>
+      <p>Instructional technology is not the tools. It is the practice of designing learning with technology, and the reasoning behind why a particular tool was chosen for a certain purpose. It is specifically because that tool improves the learning process rather than merely accompanying it. When I wrote my initial personal theory, I could describe what I do in a classroom but not consistently explain why it worked. This statement is the result of putting that reasoning in order. My central claim is that no single learning theory governs good instruction or is necessarily better than others. The right theory depends on the task in front of the learner, and the designer&rsquo;s job is to match them so the chosen technology meaningfully improves the process.</p>
+
+      <h2>A Theory Built on Task Fit</h2>
+      <p>Ertmer and Newby (2013) argue that behaviorism, cognitivism, and constructivism are less competing accounts of what learning is than tools suited to different levels of task. Behaviorist design fits recall-level content. Cognitivist design fits procedures and problem solving. Constructivist design fits ill-defined problems where transfer is the goal. A learner memorizing terminology and a learner diagnosing an unfamiliar failure are not doing the same cognitive work, and designing both the same way fails one of them.</p>
+      <p>That principle is what changed in my thinking. My initial theory stated that I chose strategies based on the objective and where the class sits, which was accurate but amounted to instinct. Task fit gives me a position I can defend and, more usefully, one I can be wrong about. It makes design decisions checkable against something other than my memory of last semester.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Table 1. Task fit, applied</caption>
+        <thead>
+          <tr>
+            <th scope="col">Task in front of the learner</th>
+            <th scope="col">Theory that fits</th>
+            <th scope="col">Design move that follows</th>
+            <th scope="col">Evidence I look for</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Retain terminology</th>
+            <td>Behaviorist</td>
+            <td>Short, low-stakes retrieval distributed across the unit</td>
+            <td>Accurate recall after a delay, not immediately after review</td>
+          </tr>
+          <tr>
+            <th scope="row">Execute a procedure</th>
+            <td>Cognitivist</td>
+            <td>Worked examples first, support reduced as competence grows</td>
+            <td>The procedure completed without prompting</td>
+          </tr>
+          <tr>
+            <th scope="row">Diagnose an unfamiliar failure</th>
+            <td>Constructivist</td>
+            <td>Virtualized environment where building and breaking carries no cost</td>
+            <td>Transfer to a scenario the learner has not seen</td>
+          </tr>
+          <tr>
+            <th scope="row">Reason with others</th>
+            <td>Sociocultural / collaborative</td>
+            <td>Peer mediation with the instructor inside the discussion rather than above it</td>
+            <td>Reasoning made visible and taken up by others</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>A workable theory also has to account for who is doing the learning, not only what is being learned. Sociocultural theory supplies the part my original statement described but never named. Wood, Bruner, and Ross (1976) defined scaffolding as the support that lets a learner complete a task they could not complete alone, withdrawn as competence grows. Van de Pol, Volman, and Beishuizen (2010) sharpened that into three properties that separate scaffolding from ordinary helping: contingency, meaning the support responds to what the learner actually does; fading, meaning the support decreases over time; and transfer of responsibility, meaning the learner progressively takes the task over. I had used a model-then-release sequence for years without those terms. Having them supplies a test. Support only counts as scaffolding if the next attempt receives less of it than the last one did, and if the reduction answers to the learner rather than to the calendar.</p>
+
+      <h2>Learners and Teachers</h2>
+      <p>Learners in technical subjects arrive with uneven prior experience, and that variance drives nearly every design decision I make. What they tend to share is a desire for autonomy within structure. Ryan and Deci (2000) tie that directly to motivation, arguing that learners invest more when they experience competence, relatedness, and a meaningful degree of self-determination. Technology extends that autonomy by giving learners control over pace, sequence, and the route they take to a common outcome.</p>
+      <p>That control carries a cost. Greater learner control demands self-regulation that many learners have not yet developed, including goal setting, self-monitoring, and reflection (Zimmerman, 2002). Learners also take on responsibilities with no clear analog in a traditional setting, such as evaluating source credibility, using generative artificial intelligence with academic integrity, and managing a digital footprint.</p>
+      <p>The teacher&rsquo;s role shifts correspondingly. Information is abundant and freely available, so the value a teacher adds is not delivery. It is designing the environment, sequencing content, calibrating difficulty so learners remain in productive struggle rather than frustration or boredom, and coaching the judgment calls that technology places in front of them. Doing that well is not a technical skill. Mishra and Koehler (2006) locate it at the intersection of technological, pedagogical, and content knowledge, and the intersection is where the decision actually lives. Knowing a tool and knowing a subject do not add up to knowing which tool serves a particular learning goal.</p>
+
+      <h2>Instructional Strategies and the Role of Technology</h2>
+      <p>My strategies follow from task fit. New or complex content receives more structure at the outset, because directing novices into open-ended discovery consumes working memory with the search for a solution rather than the structure of one (Sweller, 1988). Once learners have a foundation, support is reduced and the work moves toward independent problem solving.</p>
+      <p>Low-stakes retrieval is the other constant. I use short ungraded checks and review activities heavily, and I previously explained their value by arguing that low stakes make learners willing to be wrong so the correction sticks. That explanation locates the mechanism in the feedback. Roediger and Karpicke (2006) found that the act of retrieval itself improves long-term retention relative to spending equivalent time restudying, whether or not feedback follows. The correction matters for design. If retrieval is doing the work, then distributing retrieval across a unit matters more than concentrating review immediately before an assessment.</p>
+      <p>Technology earns its place when it does something instruction cannot do as well without it. Simulation and virtualized environments allow learners to build, break, and repair systems without risk to equipment or to their grades, which lowers the cost of experimentation and reduces the extraneous load that has nothing to do with the objective (Sweller, 1988). Asynchronous resources allow learners to revisit an explanation rather than catch it once.</p>
+      <p>I previously justified technology mostly by what it removes, such as cost, risk, and scheduling limits. Sociocultural theory frames tools differently, as instruments that change the thinking they support rather than neutral delivery mechanisms. A simulation that records every step a learner took is not simply a cheaper laboratory bench. It makes reasoning visible, which puts that reasoning where a teacher or a peer can respond to it. For collaborative and online work, Harasim (2017) describes Online Collaborative Learning as progressing through idea generating, idea organizing, and intellectual convergence, with the instructor participating as a member of the knowledge community rather than as its source. That is a more accurate account of what I want from online discussion than the convenience argument I originally offered.</p>
+
+      <h2>Evidence of Learning</h2>
+      <p>Learning is evident when a learner can use something in a situation they have not seen before, without being walked through it. A selected-response score indicates whether terminology was retained. Watching someone work an unfamiliar failure indicates whether they understand.</p>
+      <p>Method follows purpose. Recall-level content can be checked with brief low-stakes items. Skills require performance. Most of what I collect is formative, because feedback a learner can still act on accomplishes more than feedback delivered after the work is finished (Black &amp; Wiliam, 1998). Technology widens the evidence available. Simulations record the sequence of actions a learner took, screen recordings let learners narrate their reasoning aloud, and digital portfolios collect work into something with value beyond the gradebook.</p>
+
+      <h2>Ethics, Equity, Accessibility, and Learner Variability</h2>
+      <p>Technology advances equity when it removes barriers and deepens inequity when it assumes resources learners do not have. The Universal Design for Learning framework treats variability as the expected condition rather than an exception and asks designers to build multiple means of engagement, representation, and action and expression from the outset rather than retrofitting accommodations afterward (CAST, 2024). The current version of the guidelines goes further by naming bias in design as something to be made explicit rather than assumed away.</p>
+      <p>In practice this means designing on the assumption of inequity rather than hoping against it. Nothing essential should depend on home internet access, personal hardware, or a paid subscription. It also means watching for subtler advantages, such as vocabulary that assumes prior exposure, or collaborative work that allows an experienced learner to carry a task while a novice observes. Rotating roles and requiring individual documentation surfaces who is actually doing the work.</p>
+      <p>Accessibility is a design property rather than a feature appended at the end. Contrast ratios, keyboard operability, and whether feedback is announced to a screen reader are decisions made during construction, and they are testable rather than matters of taste. Ethical obligations extend to vetting tools for privacy before placing them in front of learners, teaching learners to evaluate source credibility, and setting expectations for generative artificial intelligence that distinguish using a tool to think from using one to avoid thinking.</p>
+
+      <h2>Conclusion</h2>
+      <p>Technology should be used when it does something instruction cannot do as well without it. If a tool does not clear that bar, then other tools will do instead. What has changed in my thinking is not the practice so much as the reasoning underneath it. It has however helped me refine my practice. I became a teacher and was barely able to describe what I do or be able to report that it worked. I can now do that. I can also explain why it works, name the conditions under which it would stop working, and test a design against something more durable than instinct.</p>
+    </div>
+
+    <hr class="divider">
+
+    <h2 id="references">References</h2>
+    <ul class="refs">
+      <li>Black, P., &amp; Wiliam, D. (1998). Assessment and classroom learning. <i>Assessment in Education: Principles, Policy &amp; Practice, 5</i>(1), 7&ndash;74. <a href="https://doi.org/10.1080/0969595980050102">https://doi.org/10.1080/0969595980050102</a></li>
+      <li>CAST. (2024). <i>Universal design for learning guidelines version 3.0.</i> <a href="https://udlguidelines.cast.org">https://udlguidelines.cast.org</a></li>
+      <li>Ertmer, P. A., &amp; Newby, T. J. (2013). Behaviorism, cognitivism, constructivism: Comparing critical features from an instructional design perspective. <i>Performance Improvement Quarterly, 26</i>(2), 43&ndash;71. <a href="https://doi.org/10.1002/piq.21143">https://doi.org/10.1002/piq.21143</a></li>
+      <li>Harasim, L. (2017). <i>Learning theory and online technologies</i> (2nd ed.). Routledge.</li>
+      <li>Mishra, P., &amp; Koehler, M. J. (2006). Technological pedagogical content knowledge: A framework for teacher knowledge. <i>Teachers College Record, 108</i>(6), 1017&ndash;1054. <a href="https://doi.org/10.1111/j.1467-9620.2006.00684.x">https://doi.org/10.1111/j.1467-9620.2006.00684.x</a></li>
+      <li>Roediger, H. L., III, &amp; Karpicke, J. D. (2006). Test-enhanced learning: Taking memory tests improves long-term retention. <i>Psychological Science, 17</i>(3), 249&ndash;255. <a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x">https://doi.org/10.1111/j.1467-9280.2006.01693.x</a></li>
+      <li>Ryan, R. M., &amp; Deci, E. L. (2000). Self-determination theory and the facilitation of intrinsic motivation, social development, and well-being. <i>American Psychologist, 55</i>(1), 68&ndash;78. <a href="https://doi.org/10.1037/0003-066X.55.1.68">https://doi.org/10.1037/0003-066X.55.1.68</a></li>
+      <li>Sweller, J. (1988). Cognitive load during problem solving: Effects on learning. <i>Cognitive Science, 12</i>(2), 257&ndash;285. <a href="https://doi.org/10.1207/s15516709cog1202_4">https://doi.org/10.1207/s15516709cog1202_4</a></li>
+      <li>van de Pol, J., Volman, M., &amp; Beishuizen, J. (2010). Scaffolding in teacher&ndash;student interaction: A decade of research. <i>Educational Psychology Review, 22</i>(3), 271&ndash;296. <a href="https://doi.org/10.1007/s10648-010-9127-6">https://doi.org/10.1007/s10648-010-9127-6</a></li>
+      <li>Wood, D., Bruner, J. S., &amp; Ross, G. (1976). The role of tutoring in problem solving. <i>Journal of Child Psychology and Psychiatry, 17</i>(2), 89&ndash;100. <a href="https://doi.org/10.1111/j.1469-7610.1976.tb00381.x">https://doi.org/10.1111/j.1469-7610.1976.tb00381.x</a></li>
+      <li>Zimmerman, B. J. (2002). Becoming a self-regulated learner: An overview. <i>Theory Into Practice, 41</i>(2), 64&ndash;70. <a href="https://doi.org/10.1207/s15430421tip4102_2">https://doi.org/10.1207/s15430421tip4102_2</a></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ NARRATIVE ============ -->
+<section class="view" id="view-narrative" aria-labelledby="h-narr">
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Portfolio Narrative</p>
+      <h1 id="h-narr" tabindex="-1">From Instinct to Argument</h1>
+      <p class="lede">What the artifacts demonstrate about my learning, my professional growth, and the places where my philosophy actually moved rather than simply acquiring citations.</p>
+    </div>
+
+    <div class="prose">
+      <p>When this course started I could run a classroom and could not explain it. I knew which strategies worked because I had watched them work, and that is a real kind of knowledge. It is not one I could defend to someone who asked why, and it is not one I could troubleshoot when it stopped working. This portfolio tracks the distance between those two positions.</p>
+      <p>The three artifacts below are not illustrations of a philosophy I already held. Two of them produced the revisions that are now in it.</p>
+
+      <h2>The arc, in three stages</h2>
+    </div>
+
+    <ol class="stages">
+      <li>
+        <h3>Practice without vocabulary</h3>
+        <p>My original philosophy statement described a model-then-release sequence, heavy use of low-stakes review, and virtualized labs where students build and break systems. All of it accurate. None of it named. I was describing scaffolding, retrieval practice, and cognitive load management without those terms, which meant I could repeat what I did but could not reason about it. Behaviorism and constructivism were present in my practice and absent from my citations.</p>
+      </li>
+      <li>
+        <h3>Naming the mechanisms</h3>
+        <p>Modules 3 through 5 supplied the vocabulary and, more importantly, the tests that come attached to it. Ertmer and Newby (2013) gave me task fit, which turned &ldquo;I pick strategies based on the objective&rdquo; into a position with stated conditions. Van de Pol et al. (2010) gave me contingency, fading, and transfer of responsibility, which turned &ldquo;I model, then release&rdquo; into something I can measurably fail at.</p>
+        <p>A named mechanism is not a label. It is a claim that can be wrong, and that is the whole value of it. Support only counts as scaffolding if the next attempt receives less of it than the last one did. I can now check that.</p>
+      </li>
+      <li>
+        <h3>Testing the position against feedback</h3>
+        <p>This is the part I did not anticipate. The Module 3 artifact exposed a gap in my own reasoning that I had carried for years, and the correction is now written into my final philosophy. The chain is documented below.</p>
+      </li>
+    </ol>
+
+    <figure>
+      <svg viewBox="0 0 860 150" role="img" aria-labelledby="chainTitle chainDesc">
+        <title id="chainTitle">How instructor feedback changed a stated position</title>
+        <desc id="chainDesc">A four-step chain. Step one, the artifact: The Pretext Field Guide presented all sixteen fallacies before any practice. Step two, the feedback: introduce one appeal group at a time and mix earlier fallacies into each new practice set so retrieval practice offsets the front-loading. Step three, the research: Roediger and Karpicke, two thousand six, found that the act of retrieval itself improves long-term retention relative to restudying. Step four, the philosophy change: distributing retrieval across a unit matters more than concentrating review immediately before an assessment.</desc>
+        <defs>
+          <marker id="arw2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+            <path d="M0 0 L10 5 L0 10 z" fill="#C8860D"></path>
+          </marker>
+        </defs>
+        <rect x="2" y="26" width="186" height="98" rx="8" fill="#FFFFFF" stroke="#D7CFBD" stroke-width="2"></rect>
+        <text x="20" y="52" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#7E5207" letter-spacing="1.3">THE ARTIFACT</text>
+        <text x="20" y="76" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">All 16 fallacies</text>
+        <text x="20" y="95" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">front-loaded before</text>
+        <text x="20" y="114" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">any practice.</text>
+
+        <line x1="196" y1="75" x2="222" y2="75" stroke="#C8860D" stroke-width="3" marker-end="url(#arw2)"></line>
+
+        <rect x="230" y="26" width="186" height="98" rx="8" fill="#FFFFFF" stroke="#D7CFBD" stroke-width="2"></rect>
+        <text x="248" y="52" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#7E5207" letter-spacing="1.3">THE FEEDBACK</text>
+        <text x="248" y="76" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">Mix earlier fallacies</text>
+        <text x="248" y="95" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">into each new set so</text>
+        <text x="248" y="114" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">retrieval does work.</text>
+
+        <line x1="424" y1="75" x2="450" y2="75" stroke="#C8860D" stroke-width="3" marker-end="url(#arw2)"></line>
+
+        <rect x="458" y="26" width="186" height="98" rx="8" fill="#FFFFFF" stroke="#D7CFBD" stroke-width="2"></rect>
+        <text x="476" y="52" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#7E5207" letter-spacing="1.3">THE RESEARCH</text>
+        <text x="476" y="76" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">Roediger &amp; Karpicke</text>
+        <text x="476" y="95" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">(2006): retrieval itself</text>
+        <text x="476" y="114" font-family="Source Sans 3, sans-serif" font-size="14" fill="#22231F">drives retention.</text>
+
+        <line x1="652" y1="75" x2="678" y2="75" stroke="#C8860D" stroke-width="3" marker-end="url(#arw2)"></line>
+
+        <rect x="686" y="26" width="172" height="98" rx="8" fill="#1E3D2F" stroke="#1E3D2F" stroke-width="2"></rect>
+        <text x="704" y="52" font-family="IBM Plex Mono, monospace" font-size="12" font-weight="600" fill="#E8C77E" letter-spacing="1.3">THE CHANGE</text>
+        <text x="704" y="76" font-family="Source Sans 3, sans-serif" font-size="14" fill="#FBF8F1">Distribute retrieval</text>
+        <text x="704" y="95" font-family="Source Sans 3, sans-serif" font-size="14" fill="#FBF8F1">across the unit, don&#8217;t</text>
+        <text x="704" y="114" font-family="Source Sans 3, sans-serif" font-size="14" fill="#FBF8F1">mass it before a test.</text>
+      </svg>
+      <figcaption><b>Figure 2.</b> The one place in this course where an artifact, external feedback, and the research literature combined to change a position I had held in practice for years. Original figure by the author.</figcaption>
+    </figure>
+
+    <div class="prose">
+      <p>The short version: I had been massing review immediately before assessments and calling it good practice, because my explanation for why low-stakes review worked located the mechanism in the feedback rather than in the retrieval. Instructor feedback on the Module 3 artifact pointed out that the guide front-loaded all sixteen fallacies before any practice, and that mixing earlier items into each new set would put retrieval to work against that front-loading. Following that back to Roediger and Karpicke (2006) showed me the explanation I had been using was in the wrong place. If retrieval itself is doing the work, the scheduling implication is different from the one I had been following. That sentence is now in my philosophy, and it changes what I will do in a unit plan.</p>
+
+      <h2>What each module contributed</h2>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Table 2. Module contributions to the final philosophy</caption>
+        <thead>
+          <tr>
+            <th scope="col">Module</th>
+            <th scope="col">What it supplied</th>
+            <th scope="col">Where it shows up in the philosophy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">3. Learning and instructional theories</th>
+            <td>Task fit as an organizing principle; theory as a design lens rather than a label</td>
+            <td>The central claim, and the distinction between what a learner memorizing terminology and a learner diagnosing a failure are each doing</td>
+          </tr>
+          <tr>
+            <th scope="row">4. Design process and integration frameworks</th>
+            <td>TPACK, SAMR, and UDL applied to one case; the discovery that SAMR describes a change rather than grading it</td>
+            <td>The argument that knowing a tool and knowing a subject do not add up to knowing which tool serves a goal</td>
+          </tr>
+          <tr>
+            <th scope="row">5. Technology adoption models</th>
+            <td>Diffusion of Innovations; the More Knowledgeable Other as a design constraint rather than a reading</td>
+            <td>Scaffolding properties applied outside a classroom, and the shift from justifying technology by what it removes to what it changes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <h2>The honest limits</h2>
+      <p>A portfolio that only reports growth is a sales document. Three things in here are not finished.</p>
+      <ul class="tick">
+        <li>The Module 3 revision is specified but not built. I know what the staged release and mixed practice sets should look like. The published resource still front-loads.</li>
+        <li>The artifacts have been checked for contrast and keyboard operability with automated tools and manual tabbing. None has been tested with a hardware screen reader, which is the test that actually counts.</li>
+        <li>Task fit is a position I can state and defend. I have not yet run a full semester designed deliberately around it, so I cannot report what it looks like when it fails.</li>
+      </ul>
+      <p>Naming those is not modesty. My own philosophy argues that a usable theory has to name the conditions under which it would stop working, and the same standard applies to the portfolio that presents it.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ARTIFACTS ============ -->
+<section class="view" id="view-artifacts" aria-labelledby="h-art">
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Evidence of Learning</p>
+      <h1 id="h-art" tabindex="-1">Artifacts</h1>
+      <p class="lede">Three Cool Resources built across Modules 3, 4, and 5. Each entry gives the source and license, the theory that governed the design, and the specific thing it demonstrates about my learning. Every resource opens in a new tab.</p>
+    </div>
+
+    <article class="artifact">
+      <div class="artifact-head">
+        <span class="mod">Module 3 &middot; Learning and Instructional Theories</span>
+        <h2>The Pretext Field Guide</h2>
+      </div>
+      <div class="artifact-body">
+        <dl class="meta">
+          <div><dt>Source remixed</dt><dd>Lumen Learning, <i>Common Logical Fallacies</i> (English Composition I), CC BY 4.0</dd></div>
+          <div><dt>Remix license</dt><dd>CC BY 4.0</dd></div>
+          <div><dt>Governing theory</dt><dd>Cognitivism (Mayer, 2002); cognitive load (Sweller, 1988)</dd></div>
+          <div><dt>Audience</dt><dd>Secondary learners studying social engineering</dd></div>
+        </dl>
+
+        <p>A remix that keeps all sixteen logical fallacies and their definitions from the open source, then rewrites every example as a phishing email, a pretext phone call, or a text scam. The fallacies are grouped by the appeal they exploit, logos, pathos, and ethos. Ten practice scenarios follow: the learner reads a message and names the technique, and the exact manipulative sentence is highlighted with an explanation of why it works. A builder at the end asks the learner to write one.</p>
+
+        <div class="evidence">
+          <h3>What this demonstrates about my learning</h3>
+          <p>It demonstrates that I can derive a design decision from a theory claim rather than from taste. Grouping sixteen items into three appeal categories is not decoration, it is chunking, and the choice came from Mayer&rsquo;s account of managing limited working memory. I could state the reason before I built it.</p>
+          <p>It also demonstrates the limit of designing from a single theory, which is the more useful finding. The guide presents all sixteen before any practice. That is a coherent cognitivist sequencing decision and it is not supported by what the retrieval literature says about spacing. I did not see the gap until instructor feedback named it, and following that feedback produced the one substantive revision to my final philosophy. An artifact that exposes a flaw in my reasoning is better evidence of learning than one that does not.</p>
+        </div>
+
+        <a class="visit" href="https://claude.ai/artifact/HbW88yRfLDshGA1LufR6rS" target="_blank" rel="noopener noreferrer">Open The Pretext Field Guide <span class="ext">(opens in a new tab)</span></a>
+      </div>
+    </article>
+
+    <article class="artifact">
+      <div class="artifact-head">
+        <span class="mod">Module 4 &middot; Design Process and Integration Frameworks</span>
+        <h2>One Inbox, Three Lenses</h2>
+      </div>
+      <div class="artifact-body">
+        <dl class="meta">
+          <div><dt>Type</dt><dd>Original comparative resource built from assigned course readings</dd></div>
+          <div><dt>Hosting</dt><dd>GitHub Pages</dd></div>
+          <div><dt>Frameworks applied</dt><dd>TPACK, SAMR, and Universal Design for Learning</dd></div>
+          <div><dt>Case held constant</dt><dd>A single phishing-simulation lesson</dd></div>
+        </dl>
+
+        <p>One lesson, read three ways. Rather than defining TPACK, SAMR, and UDL in sequence, the resource holds a single phishing-simulation lesson constant and applies each framework to it, so the differences between the frameworks appear in what each one notices and what each one ignores. It closes with a comparison and a defended choice.</p>
+
+        <div class="evidence">
+          <h3>What this demonstrates about my learning</h3>
+          <p>Two things, one conceptual and one practical.</p>
+          <p>The conceptual one is a correction. I went in treating SAMR as a hierarchy, with redefinition as the goal and substitution as a failure state. Applying it to an actual lesson showed that the level names the kind of change, not its quality, and that a substitution-level choice can be the correct one when the task does not call for more. That is task fit arriving by a different road, and it is why the Module 4 contribution shows up in my philosophy as the argument about where the real decision lives.</p>
+          <p>The practical one is structural. The artifact had to be rebuilt mid-course when a fourth framework was removed from the assignment requirements. Because the design held the case constant and varied only the lens, removing a lens left the case, the structure, and the comparison intact. Organizing around the learning problem rather than around the frameworks is what made the artifact survive a changed requirement.</p>
+        </div>
+
+        <a class="visit" href="https://gumbobb.github.io/one-inbox-three-lenses/" target="_blank" rel="noopener noreferrer">Open One Inbox, Three Lenses <span class="ext">(opens in a new tab)</span></a>
+      </div>
+    </article>
+
+    <article class="artifact">
+      <div class="artifact-head">
+        <span class="mod">Module 5 &middot; Technology Adoption Models</span>
+        <h2>The Adoption Brief</h2>
+      </div>
+      <div class="artifact-body">
+        <dl class="meta">
+          <div><dt>Source remixed</dt><dd>Thompson (2017), open textbook chapter, CC BY-NC 4.0</dd></div>
+          <div><dt>Remix license</dt><dd>CC BY-NC 4.0</dd></div>
+          <div><dt>Model</dt><dd>Diffusion of Innovations (Rogers)</dd></div>
+          <div><dt>Theory and framework</dt><dd>More Knowledgeable Other (sociocultural); UDL</dd></div>
+        </dl>
+
+        <p>Diffusion of Innovations explained for mentors supporting transitioning veterans as they adopt unfamiliar technology. The brief remixes a general open textbook summary into an audience-specific tool with four interactive components: a stage finder, an attribute explorer, an adopter curve, and a responsible-use checklist. It cites four recent peer-reviewed sources alongside the seminal ones, and includes annotated further reading. The worked example is a composite; no real individual is described.</p>
+
+        <div class="evidence">
+          <h3>What this demonstrates about my learning</h3>
+          <p>It demonstrates sociocultural theory functioning as a design constraint rather than as a reading I could summarize. The brief positions the mentor as a More Knowledgeable Other whose standing comes from having done the thing rather than from a title, and it builds support that fades as the adopter moves through the decision stages. That is contingency and fading in Van de Pol&rsquo;s sense, applied deliberately, and applied outside a classroom to adult learners. Being able to transfer a construct to a context the readings did not cover is the test I would apply to a student, so it is the one I should apply here.</p>
+          <p>It also forced the equity argument in my philosophy to become concrete. The intended audience includes adults with a wide range of access needs, so the UDL decisions were not optional enhancements layered on at the end. Designing for variability from the outset, rather than retrofitting, is a claim I had written down before this artifact and had not previously had to honor under a real constraint.</p>
+        </div>
+
+        <a class="visit" href="https://gumbobb.github.io/the-adoption-brief/" target="_blank" rel="noopener noreferrer">Open The Adoption Brief <span class="ext">(opens in a new tab)</span></a>
+      </div>
+    </article>
+
+    <div class="panel panel-accent">
+      <h2>A note on reading these together</h2>
+      <p>Taken in order, the three artifacts move from applying one theory, to comparing three frameworks against a single case, to transferring a construct into a setting the course readings did not address. That progression is the argument of this portfolio. It is also the reason the Module 3 artifact is presented with its flaw intact rather than quietly revised before submission.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INTEGRITY ============ -->
+<section class="view" id="view-integrity" aria-labelledby="h-int">
+  <div class="wrap">
+    <div class="page-head">
+      <p class="eyebrow">Accessibility, Privacy, Copyright, and AI Use</p>
+      <h1 id="h-int" tabindex="-1">Accessibility &amp; Use</h1>
+      <p class="lede">What was done to make this site usable, what was done to protect other people, where the material came from, and where generative artificial intelligence contributed.</p>
+    </div>
+
+    <div class="prose">
+      <h2>Accessibility statement</h2>
+      <p>Accessibility here is treated as a design property rather than a feature added at the end, which is the position argued in my philosophy. These are the decisions made during construction, stated so they can be checked.</p>
+      <ul class="tick">
+        <li><b>Structure.</b> Semantic landmarks for header, navigation, main, and footer. One level-one heading per view, with heading levels in order and no levels skipped.</li>
+        <li><b>Keyboard.</b> Every interactive element is reachable and operable by keyboard, with a visible focus indicator that meets contrast requirements. A skip link to main content is the first focusable element on the page.</li>
+        <li><b>Navigation state.</b> The current page is marked with <span class="tag">aria-current</span> so it is announced, not only shown in color. When the view changes, focus moves to the new heading and the change is announced through a polite live region.</li>
+        <li><b>Contrast.</b> Body text, headings, and interface text meet or exceed WCAG 2.1 AA, which is 4.5 to 1 for normal text and 3 to 1 for large text. Color is never the only carrier of meaning.</li>
+        <li><b>Figures.</b> Both diagrams are inline SVG with <span class="tag">role="img"</span> and a linked title and description, so the full content of each figure is available as text rather than as an image with a short label.</li>
+        <li><b>Tables.</b> Data tables use real table markup with captions, column headers, and row headers scoped so a screen reader can announce the cell context.</li>
+        <li><b>Links.</b> Link text describes its destination. External links are marked as opening in a new tab within the link text itself.</li>
+        <li><b>Motion and sizing.</b> The <span class="tag">prefers-reduced-motion</span> setting is honored. The layout reflows to 320 pixels and text resizes to 200 percent without loss of content or function. Touch targets meet the 44 pixel minimum.</li>
+        <li><b>Media.</b> No audio or video is used on this site, so captions and transcripts are not applicable here. No decorative images are used; both figures are informative and described in full.</li>
+      </ul>
+      <p><b>Known limitation.</b> This site and the three linked resources were tested by keyboard and with automated contrast checking. None has yet been tested with a hardware screen reader. That test is outstanding and is named as such rather than implied to be complete.</p>
+
+      <h2>Privacy</h2>
+      <ul class="tick">
+        <li>No student names, student work, student images, or student data appear anywhere on this site or in the linked resources.</li>
+        <li>Course peers are not named, and peer feedback is described in general terms rather than reproduced or attributed.</li>
+        <li>The worked example in the Module 5 resource is a composite. No real individual is described, and no organization is identified or branded.</li>
+        <li>No personal contact information, institutional account details, or third-party analytics are collected or embedded. This site sets no cookies and stores nothing in the browser.</li>
+      </ul>
+
+      <h2>Copyright, licensing, and attribution</h2>
+      <p>Two of the three artifacts are remixes of openly licensed material. Each carries attribution on the resource itself, and each remix is licensed compatibly with its source.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Table 3. Source material and licensing</caption>
+        <thead>
+          <tr>
+            <th scope="col">Artifact</th>
+            <th scope="col">Source</th>
+            <th scope="col">Source license</th>
+            <th scope="col">License applied to the remix</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">The Pretext Field Guide</th>
+            <td>Lumen Learning, <i>Common Logical Fallacies</i>, English Composition I</td>
+            <td>CC BY 4.0</td>
+            <td>CC BY 4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">One Inbox, Three Lenses</th>
+            <td>Original work built from assigned course readings, cited in APA</td>
+            <td>Not a remix</td>
+            <td>CC BY-NC 4.0</td>
+          </tr>
+          <tr>
+            <th scope="row">The Adoption Brief</th>
+            <td>Thompson (2017), open textbook chapter</td>
+            <td>CC BY-NC 4.0</td>
+            <td>CC BY-NC 4.0</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <ul class="tick">
+        <li><b>Scholarly sources</b> are cited in APA 7 style with DOI links where available. Full reference lists appear on the <a href="#philosophy">Philosophy page</a> and within each linked resource.</li>
+        <li><b>Figures.</b> Both diagrams on this site are original vector graphics created by the author. No third-party images, photographs, icons, or illustrations are used anywhere on this site.</li>
+        <li><b>Typefaces.</b> Roboto Slab, Source Sans 3, and IBM Plex Mono, all released under the SIL Open Font License and served through Google Fonts.</li>
+        <li><b>This site.</b> Content &copy; 2026 Brandon Hughes, released under CC BY-NC 4.0. The Philosophy of Instructional Technology reproduced here is my own original academic work.</li>
+      </ul>
+
+      <h2>Generative AI use disclosure</h2>
+      <p>Generative artificial intelligence contributed to work in this portfolio. This disclosure states where, how the output was checked, and what remains my own judgment.</p>
+    </div>
+
+    <div class="tablewrap">
+      <table>
+        <caption>Table 4. Where generative AI contributed</caption>
+        <thead>
+          <tr>
+            <th scope="col">Component</th>
+            <th scope="col">What the tool did</th>
+            <th scope="col">What I did</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Philosophy statement</th>
+            <td>Helped locate and format sources, revise language, and check APA formatting</td>
+            <td>Wrote the argument and the positions; verified every citation against the source; revised and approved the final text</td>
+          </tr>
+          <tr>
+            <th scope="row">Module artifacts</th>
+            <td>Drafted and built interactive HTML, assisted with source research, ran automated accessibility checks</td>
+            <td>Chose the learning problem, the source to remix, the governing theory, and every design decision; verified factual claims and licensing against the originals</td>
+          </tr>
+          <tr>
+            <th scope="row">This portfolio site</th>
+            <td>Wrote the HTML, CSS, and navigation script; drafted connective prose from my prior writing and from feedback I supplied; produced the two SVG figures to my specification</td>
+            <td>Set the structure and the narrative argument; supplied the source material, the feedback, and the interpretation of it; reviewed and approved all text</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="prose">
+      <p>The tool used was Claude (Anthropic). The beliefs, classroom examples, professional judgments, theory selections, and the reading of what the feedback meant are my own. I reviewed, revised, and verified the resulting material and remain responsible for this submission in full.</p>
+      <p>This disclosure is itself an application of a position in my philosophy: that learners now carry responsibilities with no clear analog in a traditional setting, including using generative artificial intelligence in a way that distinguishes using a tool to think from using one to avoid thinking. Asking that of students while leaving my own use undocumented would not survive the standard.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="sitefoot">
+  <div class="wrap">
+    <div>
+      <p><b style="color:#FBF8F1">Brandon Hughes</b><br>Philosophy of Instructional Technology Portfolio</p>
+      <p>AIL 601: Principles of Instructional Technology &middot; College of Education, The University of Alabama &middot; November 2026</p>
+    </div>
+    <div>
+      <p>Content &copy; 2026 Brandon Hughes.<br>Released under <a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener noreferrer">CC BY-NC 4.0 (opens in a new tab)</a>.</p>
+      <p><a href="#integrity">Accessibility, privacy, and AI use statement</a></p>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  "use strict";
+
+  var ROUTES = ["home","philosophy","narrative","artifacts","integrity"];
+  var TITLES = {
+    "home":"Home",
+    "philosophy":"Philosophy of Instructional Technology",
+    "narrative":"Portfolio Narrative",
+    "artifacts":"Artifacts",
+    "integrity":"Accessibility and Use"
+  };
+  var BASE = "Brandon Hughes | Instructional Technology Portfolio";
+
+  var views = document.querySelectorAll(".view");
+  var navLinks = document.querySelectorAll("nav.sitenav a[data-route]");
+  var announcer = document.getElementById("announcer");
+  var first = true;
+
+  function currentRoute(){
+    var h = window.location.hash.replace(/^#/,"").toLowerCase();
+    return ROUTES.indexOf(h) > -1 ? h : "home";
+  }
+
+  function render(){
+    var route = currentRoute();
+    var target = null;
+
+    for(var i=0;i<views.length;i++){
+      var v = views[i];
+      var isMatch = (v.id === "view-" + route);
+      if(isMatch){ target = v; }
+      v.classList.toggle("is-active", isMatch);
+    }
+
+    for(var j=0;j<navLinks.length;j++){
+      var a = navLinks[j];
+      if(a.getAttribute("data-route") === route){
+        a.setAttribute("aria-current","page");
+      } else {
+        a.removeAttribute("aria-current");
+      }
+    }
+
+    document.title = TITLES[route] + " | " + BASE;
+
+    if(!first && target){
+      var h1 = target.querySelector("h1");
+      if(h1){ h1.focus({preventScroll:true}); }
+      window.scrollTo(0,0);
+      announcer.textContent = TITLES[route] + " page loaded.";
+    }
+    first = false;
+  }
+
+  window.addEventListener("hashchange", render);
+
+  // Clicking the link for the view already showing still re-renders and resets focus.
+  document.addEventListener("click", function(e){
+    if(!e.target.closest){ return; }
+    var a = e.target.closest("a[href^='#']");
+    if(!a){ return; }
+    var want = a.getAttribute("href").replace(/^#/,"").toLowerCase();
+    if(ROUTES.indexOf(want) > -1 && want === currentRoute()){
+      e.preventDefault();
+      first = false;
+      render();
+    }
+  });
+
+  render();
+})();
+</script>
+
+</body>
+</html>
